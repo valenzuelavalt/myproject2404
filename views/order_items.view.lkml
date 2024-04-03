@@ -2,6 +2,29 @@ view: order_items {
   sql_table_name: demo_db.order_items ;;
   drill_fields: [id]
 
+  dimension_group: created {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,minute,
+      year
+    ]
+    sql: ${TABLE}.returned_at ;;
+  }
+
+dimension: date_s {
+  type: date
+  sql: ${created_date} ;;
+}
+
+  filter: date_filter {
+    type: date
+    sql: date_format({% date_start date_filter %}, '%Y-%m-%d');;
+  }
   dimension: id {
     primary_key: yes
     type: number
@@ -37,5 +60,9 @@ view: order_items {
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
+  }
+  measure: counttest {
+    type: number
+    sql: ${count}*100000 ;;
   }
 }
