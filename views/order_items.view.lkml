@@ -16,15 +16,6 @@ view: order_items {
     sql: ${TABLE}.returned_at ;;
   }
 
-dimension: date_s {
-  type: date
-  sql: ${created_date} ;;
-}
-
-  filter: date_filter {
-    type: date
-    sql: date_format({% date_start date_filter %}, '%Y-%m-%d');;
-  }
   dimension: id {
     primary_key: yes
     type: number
