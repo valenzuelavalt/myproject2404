@@ -61,7 +61,7 @@ view: order_items {
           {% endif %};;
           #CHANGE "2019-11-25" TO ${first_onboarding_tr_approved at_at}
   }
-  measure: one_day_tr_approval_cvr {
+  measure: logic_interval {
     type: number
 
     sql:  CASE WHEN DATEDIFF(${first_date}, ${end_date}) <= 1
@@ -107,8 +107,5 @@ view: order_items {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
   }
-  measure: counttest {
-    type: number
-    sql: ${count}*100000 ;;
-  }
+
 }
