@@ -2,8 +2,7 @@ view: derived_table {
   derived_table: {
     sql: SELECT
          *
-       FROM demo_db.flights as flights
-       WHERE flight_num = (flight_num)
+       FROM demo_db.order_items
        ;;
     sql_trigger_value: 1 ;;
     indexes: ["flight_num"]
