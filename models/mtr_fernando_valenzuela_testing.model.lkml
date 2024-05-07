@@ -9,7 +9,7 @@ datagroup: mtr_fernando_valenzuela_testing_default_datagroup {
 }
 datagroup: derived {
   sql_trigger: SELECT count(*) FROM looker_demo_scratch.derivedtest;;
-  max_cache_age: "1 hour"
+
 }
 
 persist_with: mtr_fernando_valenzuela_testing_default_datagroup
