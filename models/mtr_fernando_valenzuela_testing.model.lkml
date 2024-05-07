@@ -7,6 +7,10 @@ datagroup: mtr_fernando_valenzuela_testing_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
+datagroup: derived {
+  sql_trigger: SELECT count(*) FROM derived_table;;
+  max_cache_age: "1 hour"
+}
 
 persist_with: mtr_fernando_valenzuela_testing_default_datagroup
 
