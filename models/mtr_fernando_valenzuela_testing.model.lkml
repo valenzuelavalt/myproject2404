@@ -8,7 +8,7 @@ datagroup: mtr_fernando_valenzuela_testing_default_datagroup {
   max_cache_age: "1 hour"
 }
 datagroup: derived {
-  sql_trigger: SELECT count(*) FROM looker_demo_scratch.derived_table;;
+  sql_trigger: SELECT count(*) FROM looker_demo_scratch.derivedtest;;
   max_cache_age: "1 hour"
 }
 
